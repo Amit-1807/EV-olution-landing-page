@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Background from './components/background/Background'
 import Navbar from './components/navbar/Navbar'
+import Hero from './components/hero/Hero'
 
 function App() {
 let heroData =[
@@ -16,6 +17,13 @@ const [playStatus,setPlayStatus] = useState(false)
     <>
     <Background playStatus={playStatus} heroCount={heroCount}/>
     <Navbar/>
+    <Hero
+         setPlayStatus={setPlayStatus}
+         heroData={heroData[heroCount]}
+         heroCount={heroCount}
+        setHeroCount={setHeroCount}
+        playStatus={playStatus}
+    />
     </>
   )
 }
